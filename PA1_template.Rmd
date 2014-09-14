@@ -51,7 +51,8 @@ The median for the total number of steps taken each day : **`r prettyNum(median(
 
 ```{r Activity Daily Pattern}
 
-## Create a subset from the parent activityData dataset that has the average of the steps taken averaged across all days
+## Create a subset from the parent activityData dataset that has the average of the 
+## steps taken averaged across all days
 averageSteps <- aggregate(activityData$steps~activityData$interval,
                           FUN=mean, na.rm=T)
 names(averageSteps)<-c("interval", "steps")
@@ -73,7 +74,7 @@ Identify the 5 minute interval that contains the maximum number of steps, on ave
 ## and then report the interval and the maximum  number
 x<-which.max(averageSteps$steps)
 ```
-The **`r averageSteps[x,"interval"]`^th^**, 5-minute interval has the maximum of **`r averageSteps[x,"steps"]`** steps.
+The **`r averageSteps[x,"interval"]`th**, 5-minute interval has the maximum of **`r averageSteps[x,"steps"]`** steps.
 
 ***
 <b style="color:red">Item 4:</b>
